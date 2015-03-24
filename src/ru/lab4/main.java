@@ -24,6 +24,7 @@ public class main {
             text+=list.get(i);
         }
         System.out.println(text);
+        //----------------------------------------------------------------------------------------------//
         int prilag=0;
         Pattern pattern = Pattern.compile("ая ");
         Matcher matcher = pattern.matcher(text);
@@ -50,6 +51,70 @@ public class main {
         while(matcher.find()){
             prilag++;
         }
-
+        //---------------------------------------------------------------------------------------------//
+        int glagol=0;
+        pattern = Pattern.compile("ать ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            glagol++;
+        }
+        pattern = Pattern.compile("ить ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            glagol++;
+        }
+        pattern = Pattern.compile("уть ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            glagol++;
+        }
+        pattern = Pattern.compile("ать ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            glagol++;
+        }
+        pattern = Pattern.compile("еть ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            glagol++;
+        }
+        pattern = Pattern.compile("ыть ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            glagol++;
+        }
+        pattern = Pattern.compile("тся ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            glagol++;
+        }
+        pattern = Pattern.compile("ться ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            glagol++;
+        }
+        //------------------------------------------------------------------------------------------//
+        int narechie=0;
+        pattern = Pattern.compile("либо ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            narechie++;
+        }
+        pattern = Pattern.compile("нибудь ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            narechie++;
+        }
+        pattern = Pattern.compile("нно ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            narechie++;
+        }
+        pattern = Pattern.compile("либо ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            narechie++;
+        }
+        System.out.println("Наречий в тексте: "+narechie + "\nГлаголов в тексте: "+glagol+"\nПрилагательных в тексте: "+prilag);
     }
 }
