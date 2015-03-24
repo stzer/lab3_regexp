@@ -7,8 +7,6 @@ import java.io.PrintWriter;
 import java.util.*;
 public class main {
     public static void main(String[] args) throws IOException {
-        //Scanner sc = new Scanner(System.in);
-        //String str = new String();
         ArrayList <String> list = new ArrayList<String>();
 
         File fd = new File("myfile.txt");
@@ -21,8 +19,37 @@ public class main {
             list.add(fw.nextLine());
         }
         fw.close();
-        for(int i=0;i<list.size();i++){
-            System.out.println(list.get(i) + " ");
+        String text=list.get(0);
+        for(int i=1;i<list.size();i++){
+            text+=list.get(i);
         }
+        System.out.println(text);
+        int prilag=0;
+        Pattern pattern = Pattern.compile("ая ");
+        Matcher matcher = pattern.matcher(text);
+        while(matcher.find()){
+            prilag++;
+        }
+        pattern = Pattern.compile("ые ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            prilag++;
+        }
+        pattern = Pattern.compile("ое ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            prilag++;
+        }
+        pattern = Pattern.compile("ую ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            prilag++;
+        }
+        pattern = Pattern.compile("ый ");
+        matcher = pattern.matcher(text);
+        while(matcher.find()){
+            prilag++;
+        }
+
     }
 }
