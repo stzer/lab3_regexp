@@ -3,7 +3,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.*;
 public class main {
     public static void main(String[] args) throws IOException {
@@ -26,92 +25,24 @@ public class main {
         System.out.println(text);
         //----------------------------------------------------------------------------------------------//
         int prilag=0;
-        Pattern pattern = Pattern.compile("ая ");
+        Pattern pattern = Pattern.compile("ая[ .,!?] |[ыо]е[ .,!?]|[у|ю]ю[ .,!?]");
         Matcher matcher = pattern.matcher(text);
         while(matcher.find()){
             prilag++;
         }
-        pattern = Pattern.compile("ые ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            prilag++;
-        }
-        pattern = Pattern.compile("ое ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            prilag++;
-        }
-        pattern = Pattern.compile("ую ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            prilag++;
-        }
-        pattern = Pattern.compile("ый ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            prilag++;
-        }
+
         //---------------------------------------------------------------------------------------------//
         int glagol=0;
-        pattern = Pattern.compile("ать ");
+        pattern = Pattern.compile("[аыуиею]ть[ .,!?]|тся[ .,!?]|ться[ .,!?]");
         matcher = pattern.matcher(text);
         while(matcher.find()){
             glagol++;
         }
-        pattern = Pattern.compile("ить ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            glagol++;
-        }
-        pattern = Pattern.compile("уть ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            glagol++;
-        }
-        pattern = Pattern.compile("ать ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            glagol++;
-        }
-        pattern = Pattern.compile("еть ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            glagol++;
-        }
-        pattern = Pattern.compile("ыть ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            glagol++;
-        }
-        pattern = Pattern.compile("тся ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            glagol++;
-        }
-        pattern = Pattern.compile("ться ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            glagol++;
-        }
+
         //------------------------------------------------------------------------------------------//
         int narechie=0;
-        pattern = Pattern.compile("либо ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            narechie++;
-        }
-        pattern = Pattern.compile("нибудь ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            narechie++;
-        }
-        pattern = Pattern.compile("нно ");
-        matcher = pattern.matcher(text);
-        while(matcher.find()){
-            narechie++;
-        }
-        pattern = Pattern.compile("либо ");
-        matcher = pattern.matcher(text);
+        pattern = Pattern.compile("либо[ .,!?]|нибудь[ .,!?]|нно[ .,!?]");
+                matcher = pattern.matcher(text);
         while(matcher.find()){
             narechie++;
         }
